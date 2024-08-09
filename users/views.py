@@ -5,7 +5,7 @@ from users.forms import LoginForm
 def login_view(request):
     if request.method=="POST":
         form = LoginForm(data=request.POST)
-        if(form.is_valid):
+        if form.is_valid():
             username = form.cleaned_data["username"]
             password = form.cleaned_data["password"]
 
